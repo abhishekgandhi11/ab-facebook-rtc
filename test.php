@@ -276,54 +276,56 @@
 											if(file_exists($user_name)){
 												unlink($user_name);
 											}
-											// function getData($url)
-											// {
-											// 	//  Initiate curl
-											// 	$ch = curl_init();
-											// 	// Disable SSL verification
-											// 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-											// 	// Will return the response, if false it print the response
-											// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-											// 	// Set the url
-											// 	curl_setopt($ch, CURLOPT_URL,$url);
-											// 	// Execute
-											// 	$result=json_decode(curl_exec($ch),true);
-											// 	// Closing
-											// 	curl_close($ch);      
-											// 	return $result;
-											// }
+											function getData($url)
+											{
+												//  Initiate curl
+												$ch = curl_init();
+												// Disable SSL verification
+												curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+												// Will return the response, if false it print the response
+												curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+												// Set the url
+												curl_setopt($ch, CURLOPT_URL,$url);
+												// Execute
+												$result=json_decode(curl_exec($ch),true);
+												// Closing
+												curl_close($ch);      
+												return $result;
+											}
 											   
-											// $link=array();	
-											// $links='';        	
-											// function getNextParser($url,$tmp)
-											// {
-											// 	$innerData = getData($url);
-											// 	foreach($innerData['data'] as $image)
-											// 		 {
-											// 		 $GLOBALS['links'].=$image['images'][0]['source']." ";
-											// 		 $tmp[]=($image['images'][0]['source']);
-											// 		 }
-											// 	if(isset($innerData['paging']['next'])){
-											// 		$tmp = getNextParser($innerData['paging']['next'],$tmp);
-											// 	}
-											// }
-											// // Main calling 
-											// $result = getData($url);     		
-											// foreach($result['albums']['data'] as $album)
-											// {
-											// 	$GLOBALS['links'].=$album['name']."||";
-											// 	foreach($album['photos']['data'] as $image)
-											// 	{
-											// 		 $GLOBALS['links'].= ($image['images'][0]['source']);
-											// 		$tmp[]=($image['images'][0]['source']);
-											// 		$cnt++;
-											// 	}
-											// 	if(isset($album['photos']['paging']['next']))
-											// 	{
-											// 		$tmp =(getNextParser($album['photos']['paging']['next'],$tmp));
-											// 	}	
-											// 	$GLOBALS['links'].=" , ";
-											// }												 
+											$link=array();	
+											$links='';        	
+											function getNextParser($url,$tmp)
+											{
+												$innerData = getData($url);
+												foreach($innerData['data'] as $image)
+													 {
+													 $GLOBALS['links'].=$image['images'][0]['source']." ";
+													 $tmp[]=($image['images'][0]['source']);
+													 }
+												if(isset($innerData['paging']['next'])){
+													$tmp = getNextParser($innerData['paging']['next'],$tmp);
+												}
+											}
+											// Main calling 
+											$result = getData($url);     		
+											foreach($result['albums']['data'] as $album)
+											{
+												$GLOBALS['links'].=$album['name']."||";
+												foreach($album['photos']['data'] as $image)
+												{
+													 $GLOBALS['links'].= ($image['images'][0]['source']);
+													$tmp[]=($image['images'][0]['source']);
+													$cnt++;
+												}
+												if(isset($album['photos']['paging']['next']))
+												{
+													$tmp =(getNextParser($album['photos']['paging']['next'],$tmp));
+												}	
+												$GLOBALS['links'].=" , ";
+											}												 
+											$_SESSION['links'] = $GLOBALS['links'];
+											$_SESSION['GraphNode'] = $graphNode;
 											// $zipfile = get_album($graphNode,$selected_album,$links);
 
 										
