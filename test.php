@@ -330,6 +330,7 @@
 					                        // $_SESSION['session_zipname'] = $user_name;
 											// header('location: googledrivemsg.php');
 											$_SESSION['user_name'] = $graphNode['name'];
+											$_SESSION['Selected_albums'] = $selected_album;
 											header('location:google_drive_new.php');
 
 										

@@ -30,13 +30,12 @@ else
     $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
     $folderId = $file->id;
 	
-	
-	//    $albumname=array("Volvo", "BMW", "Toyota");
+	   $albumname=$_SESSION['Selected_albums'];
 	   
-	//     foreach ($albumname as $album)
-	// 	{
-    //         moveToDrive($album,$folderId,$drive);
-    //     }
+	    foreach ($albumname as $album)
+		{
+            moveToDrive($album,$folderId,$drive);
+        }
    
    
 }
