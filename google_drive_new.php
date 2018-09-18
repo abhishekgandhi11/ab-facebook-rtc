@@ -33,9 +33,9 @@ else
 	$graphNode = $_SESSION['GraphNode'];
 	   $albumname=$_SESSION['Selected_albums'];
     print_r($links);
-    echo "<br/><br/><pre>";
-        print_r($graphNode);
-    echo "</pre>";
+    // echo "<br/><br/><pre>";
+    //     print_r($graphNode);
+    // echo "</pre>";
 	    // foreach ($albumname as $album)
 		// {
         //     moveToDrive($album,$folderId,$drive);
