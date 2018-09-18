@@ -35,7 +35,7 @@ else
 	$albumname=$_SESSION['Selected_albums'];
 
     #move to google drive
-    function moveToDrive($album_id,$folderId,$drive,$album_pic_link) {
+    function moveToDrive($album_id,$folderId,$drive,&$album_pic_link) {
         $img=$album_pic_link;
         print_r($img);       
         $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
