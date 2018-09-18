@@ -6,7 +6,7 @@ require_once 'google/vendor/autoload.php';
 ini_set('max_execution_time', 300);
 $client = new Google_Client();
 $client->setAuthConfigFile('api.json');
-$client->setRedirectUri('http://localhost/rajdrive/index.php');
+$client->setRedirectUri('https://abhishekrtchallenge.herokuapp.com/google_drive_new.php');
 $client->addScope(Google_Service_Drive::DRIVE);
 
 if (! isset($_GET['code'])) 
@@ -22,20 +22,21 @@ else
 	 $client->setAccessToken($_SESSION['access_token_google']);
 	 $drive = new Google_Service_Drive($client);
 	 
-	 //$main="abhi";
-	$fileMetadata = new Google_Service_Drive_DriveFile(array(
-        'name' => $main,
-        'mimeType' => 'application/vnd.google-apps.folder'));
-    $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
-    $folderId = $file->id;
+     $main_folder=$_SESSION['user_name'];
+     echo $main_folder;
+	// $fileMetadata = new Google_Service_Drive_DriveFile(array(
+    //     'name' => $main,
+    //     'mimeType' => 'application/vnd.google-apps.folder'));
+    // $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
+    // $folderId = $file->id;
 	
 	
-	   $albumname=array("Volvo", "BMW", "Toyota");
+	//    $albumname=array("Volvo", "BMW", "Toyota");
 	   
-	    foreach ($albumname as $album)
-		{
-            moveToDrive($album,$folderId,$drive);
-        }
+	//     foreach ($albumname as $album)
+	// 	{
+    //         moveToDrive($album,$folderId,$drive);
+    //     }
    
    
 }
