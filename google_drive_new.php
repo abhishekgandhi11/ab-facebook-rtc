@@ -24,11 +24,11 @@ else
 	 
      $main_folder=$_SESSION['user_name'];
      echo $main_folder;
-	$fileMetadata = new Google_Service_Drive_DriveFile(array(
-        'name' => $main_folder,
-        'mimeType' => 'application/vnd.google-apps.folder'));
-    $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
-    $folderId = $file->id;
+	// $fileMetadata = new Google_Service_Drive_DriveFile(array(
+    //     'name' => $main_folder,
+    //     'mimeType' => 'application/vnd.google-apps.folder'));
+    // $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
+    // $folderId = $file->id;
     
     $links = $_SESSION['links'];
 	$graphNode = $_SESSION['GraphNode'];
