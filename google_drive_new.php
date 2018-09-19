@@ -66,7 +66,7 @@ else
     }
     
     #get links from albums
-    function get_pictures($graphNode,$NameNLinks[1]) {
+    function get_pictures($graphNode,$NameNLinks) {
         print_r($NameNLinks[1]);
         //  $album_pic_link = array();
 		// $graphnode = $graphNode;
@@ -104,7 +104,7 @@ else
 							if($temp == $album_name){
 								// echo $NameNLinks[0] . "<br/>";
 								#get pictures from albums.
-								get_pictures($graphNode,$NameNLinks[1]);
+								get_pictures($graphNode,$NameNLinks);
 							}
 						}
 				
