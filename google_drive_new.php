@@ -70,20 +70,20 @@ else
         //print_r($NameNLinks[1]);
         $urls = explode(' ', $NameNLinks[1]);
         // print_r($urls);
-         $album_pic_link = array();
-		$graphnode = $graphNode;
+        //  $album_pic_link = array();
+		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
-		$user_name = $graphnode['name'];
-			$index=0;
-			$x=array();
-             foreach($urls as $url)
-			   {
-                echo $url . "<br/>";
+		// $user_name = $graphnode['name'];
+		// 	$index=0;
+		// 	$x=array();
+        //      foreach($urls as $url)
+		// 	   {
+        //         echo $url . "<br/>";
 				// 	$download_file = file_get_contents($url);
 					// file_put_contents($path1 . '/' . $index . '.jpg',$download_file);
 					// $index++;
 					// $download_file=NULL;
-                }
+                // }
                 // echo "<br/><br/>";
                 // print_r($album_pic_link);
                 //moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
