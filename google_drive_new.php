@@ -75,25 +75,11 @@ else
             //    echo $url;
                $album_pic_link[] = $url;
         }   
-        print_r($album_pic_link);
-        // print_r($urls);
-        //  $album_pic_link = array();
-		// $graphnode = $graphNode;
+        // print_r($album_pic_link);
+		$graphnode = $graphNode;
 		#user name and id for creation main user directory on server
-		// $user_name = $graphnode['name'];
-		// 	$index=0;
-		// 	$x=array();
-        //      foreach($urls as $url)
-		// 	   {
-        //         echo $url . "<br/>";
-				// 	$download_file = file_get_contents($url);
-					// file_put_contents($path1 . '/' . $index . '.jpg',$download_file);
-					// $index++;
-					// $download_file=NULL;
-                // }
-                // echo "<br/><br/>";
-                // print_r($album_pic_link);
-                //moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
+		$user_name = $graphnode['name'];
+        moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
     }
 	#get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
