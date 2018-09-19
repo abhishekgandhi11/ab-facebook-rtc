@@ -33,7 +33,7 @@ else
     $links = $_SESSION['links'];
 	$graphNode = $_SESSION['GraphNode'];
 	$albumname=$_SESSION['Selected_albums'];
-
+    
     #move to google drive
     function moveToDrive($album_id,$folderId,$drive,&$album_pic_link) {
         $img=$album_pic_link;
@@ -91,25 +91,25 @@ else
     }
 	#get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
-		
 		$total = count($selected_album);
 			for($i=0;$i<$total;$i++) {
-				$temp = trim($selected_album[$i]," ");
+                $temp = trim($selected_album[$i]," ");
 				$allAlbums = explode(',', $links);
 					foreach($allAlbums as $ab) {
 						   $NameNLinks = explode('||', $ab);
 						   $album_name = trim($NameNLinks[0]," ");
 							if($temp == $album_name){
-		//						echo $temp . "<br/>";
+								echo $temp . "<br/>";
 								#get pictures from albums.
-								get_pictures($graphNode,$NameNLinks);
+								// get_pictures($graphNode,$NameNLinks);
 							}
 						}
 				
 			}
 		
-	}
+    }
     get_album($graphNode,$albumname,$links);
+    
 
 }
 
