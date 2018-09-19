@@ -67,7 +67,9 @@ else
     
     #get links from albums
     function get_pictures($graphNode,$NameNLinks) {
-        print_r($graphNode);
+        echo "<pre>";
+            print_r($NameNLinks);
+        echo "</pre>";
         // $album_pic_link = array();
 		// $graphnode = $graphNode;
 		// #user name and id for creation main user directory on server
