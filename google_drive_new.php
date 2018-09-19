@@ -86,7 +86,8 @@ else
 				// 	$download_file=NULL;
 				// }
                 }
-                moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
+                print_r($album_pic_link);
+                //moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
     }
 	#get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
