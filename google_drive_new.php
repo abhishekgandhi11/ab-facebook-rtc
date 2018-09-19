@@ -76,7 +76,7 @@ else
 			$urls = explode(' ', $NameNLinks[1]);
 			foreach($urls as $url)
 			   {
-                $album_pic_link[].= $url;
+                $album_pic_link[] = $url;
 				// 	$download_file = file_get_contents($url);
 				// if($download_file==NULL){
 				// }
