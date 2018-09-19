@@ -31,8 +31,8 @@ session_start();
                         #Redirect to this url After user authentication
                         $redirecturl = 'https://abhishekrtchallenge.herokuapp.com/desk.php'; 
                         $loginUrl = $helper->getLoginUrl($redirecturl , $permissions);
-                        header('location:htmlspecialchars($loginUrl)')
-                        // echo "<a href='" . htmlspecialchars($loginUrl) . "'><h3 style='color: black;'>Log in with Facebook!</h3></a>";
+                        // header('location:htmlspecialchars($loginUrl)')
+                        echo "<a href='" . htmlspecialchars($loginUrl) . "'><h3 style='color: black;'>Log in with Facebook!</h3></a>";
                     ?>
                 </form>
             </div>
