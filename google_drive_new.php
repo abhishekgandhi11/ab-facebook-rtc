@@ -69,6 +69,10 @@ else
     function get_pictures($graphNode,$NameNLinks) {
         //print_r($NameNLinks[1]);
         $urls = explode(' ', $NameNLinks[1]);
+        foreach($urls as $url)
+        {
+   	        echo $url;
+        }   
         // print_r($urls);
         //  $album_pic_link = array();
 		// $graphnode = $graphNode;
