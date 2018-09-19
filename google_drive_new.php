@@ -76,7 +76,7 @@ else
 			$urls = explode(' ', $NameNLinks[1]);
 			foreach($urls as $url)
 			   {
-                $album_pic_link[] = $url;
+                echo $url . "<br/>";
 				// 	$download_file = file_get_contents($url);
 				// if($download_file==NULL){
 				// }
@@ -86,7 +86,8 @@ else
 				// 	$download_file=NULL;
 				// }
                 }
-                print_r($album_pic_link);
+                echo "<br/><br/>";
+                // print_r($album_pic_link);
                 //moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
     }
 	#get selected albums.
@@ -99,9 +100,9 @@ else
 						   $NameNLinks = explode('||', $ab);
 						   $album_name = trim($NameNLinks[0]," ");
 							if($temp == $album_name){
-								echo $NameNLinks[0] . "<br/>";
+								// echo $NameNLinks[0] . "<br/>";
 								#get pictures from albums.
-								// get_pictures($graphNode,$NameNLinks);
+								get_pictures($graphNode,$NameNLinks);
 							}
 						}
 				
