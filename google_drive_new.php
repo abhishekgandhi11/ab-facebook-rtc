@@ -67,17 +67,18 @@ else
     
     #get links from albums
     function get_pictures($graphNode,$NameNLinks) {
-        $album_pic_link = array();
-		$graphnode = $graphNode;
-		#user name and id for creation main user directory on server
-		$user_name = $graphnode['name'];
-			$index=0;
-			$x=array();
-			$urls = explode(' ', $NameNLinks[1]);
-			foreach($urls as $url)
-			   {
-                echo $url . "<br/>";
-				// 	$download_file = file_get_contents($url);
+        print_r($graphNode);
+        // $album_pic_link = array();
+		// $graphnode = $graphNode;
+		// #user name and id for creation main user directory on server
+		// $user_name = $graphnode['name'];
+		// 	$index=0;
+		// 	$x=array();
+		// 	$urls = explode(' ', $NameNLinks[1]);
+		// 	foreach($urls as $url)
+		// 	   {
+        //         echo $url . "<br/>";
+		// 		// 	$download_file = file_get_contents($url);
 				// if($download_file==NULL){
 				// }
 				// else{
@@ -85,8 +86,8 @@ else
 				// 	$index++;
 				// 	$download_file=NULL;
 				// }
-                }
-                echo "<br/><br/>";
+                // }
+                // echo "<br/><br/>";
                 // print_r($album_pic_link);
                 //moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
     }
