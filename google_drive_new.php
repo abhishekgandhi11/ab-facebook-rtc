@@ -68,11 +68,14 @@ else
     #get links from albums
     function get_pictures($graphNode,$NameNLinks) {
         //print_r($NameNLinks[1]);
+        $album_pic_link = array();
         $urls = explode(' ', $NameNLinks[1]);
         foreach($urls as $url)
         {
-   	        echo $url;
+            //    echo $url;
+               $album_pic_link[] = $url;
         }   
+        print_r($album_pic_link);
         // print_r($urls);
         //  $album_pic_link = array();
 		// $graphnode = $graphNode;
