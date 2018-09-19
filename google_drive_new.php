@@ -66,16 +66,16 @@ else
     }
     
     #get links from albums
-    function get_pictures($graphNode,$NameNLinks) {
-        print_r($NameNLinks);
-         $album_pic_link = array();
-		$graphnode = $graphNode;
-		#user name and id for creation main user directory on server
-		$user_name = $graphnode['name'];
-			$index=0;
-			$x=array();
-			$urls = explode(' ', $NameNLinks[1]);
-            // print_r($urls);
+    function get_pictures($graphNode,$NameNLinks[1]) {
+        print_r($NameNLinks[1]);
+        //  $album_pic_link = array();
+		// $graphnode = $graphNode;
+		// #user name and id for creation main user directory on server
+		// $user_name = $graphnode['name'];
+		// 	$index=0;
+		// 	$x=array();
+		// 	$urls = explode(' ', $NameNLinks[1]);
+        //     // print_r($urls);
             // foreach($urls as $url)
 			//    {
             //     echo $url . "<br/>";
@@ -104,7 +104,7 @@ else
 							if($temp == $album_name){
 								// echo $NameNLinks[0] . "<br/>";
 								#get pictures from albums.
-								get_pictures($graphNode,$NameNLinks);
+								get_pictures($graphNode,$NameNLinks[1]);
 							}
 						}
 				
