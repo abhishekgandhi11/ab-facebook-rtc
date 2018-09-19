@@ -20,7 +20,7 @@
                     <div align="center" style="margin-top:75px;">
                     <?php
                         require_once("fb-callback.php");
-                        // header('location:getalbums.php');
+                        header('location:getalbums.php');
                         echo "<a href='getalbums.php'><h2>Go to Album page</a>";
                     ?>
     		        </div>         

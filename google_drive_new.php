@@ -99,7 +99,7 @@ else
 						   $NameNLinks = explode('||', $ab);
 						   $album_name = trim($NameNLinks[0]," ");
 							if($temp == $album_name){
-								echo $temp . "<br/>";
+								echo $NameNLinks[0] . "<br/>";
 								#get pictures from albums.
 								// get_pictures($graphNode,$NameNLinks);
 							}
