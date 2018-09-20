@@ -35,7 +35,7 @@ else
     $links = $_SESSION['links'];
 	$graphNode = $_SESSION['GraphNode'];
 	$albumname=$_SESSION['Selected_albums'];
-    print_r($links);
+    print_r($graphNode);
 }
 
 ?>
