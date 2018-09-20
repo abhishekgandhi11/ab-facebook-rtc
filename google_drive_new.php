@@ -45,7 +45,7 @@ else
             //    echo $url;
                $album_pic_link[] = $url;
         }   
-        // print_r($album_pic_link);
+         print_r($album_pic_link);
 		$graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         $user_name = $graphnode['name'];
@@ -59,7 +59,7 @@ else
         
         $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
         $album_folder = $file->id;
-        
+        echo count($album_pic_link);
         for($i=0;$i<count($album_pic_link);$i++)
         {
             $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
