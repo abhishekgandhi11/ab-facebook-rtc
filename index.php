@@ -12,8 +12,8 @@ session_start();
     <?php include("links.php"); ?>
 </head>
 <body >
-    <div class="">
-        <?php include("header.php"); ?>
+<?php include("header.php"); ?>
+    <div class="loginback">
     <div class="container">
          <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          <hr>
