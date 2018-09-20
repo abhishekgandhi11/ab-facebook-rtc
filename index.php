@@ -7,12 +7,13 @@ session_start();
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Log-in</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include("links.php"); ?>
 </head>
 <body >
-    <div class="loginback">
+    <div class="">
+        <?php include("header.php"); ?>
     <div class="container">
          <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          <hr>
