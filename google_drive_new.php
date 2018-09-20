@@ -34,8 +34,23 @@ else
     
     $links = $_SESSION['links'];
 	$graphNode = $_SESSION['GraphNode'];
-	$albumname=$_SESSION['Selected_albums'];
-    	#get selected albums.
+    $albumname=$_SESSION['Selected_albums'];
+    #get links from albums
+    function get_pictures($graphNode,$NameNLinks) {
+        //print_r($NameNLinks[1]);
+        $album_pic_link = array();
+        $urls = explode(' ', $NameNLinks[1]);
+        foreach($urls as $url)
+        {
+            //    echo $url;
+               $album_pic_link[] = $url;
+        }   
+        print_r($album_pic_link);
+		$graphnode = $graphNode;
+		#user name and id for creation main user directory on server
+        $user_name = $graphnode['name'];
+    }
+    #get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
 		$total = count($selected_album);
 			for($i=0;$i<$total;$i++) {
@@ -47,7 +62,7 @@ else
 							if($temp == $album_name){
 								 echo $NameNLinks[0] . "<br/>";
 								#get pictures from albums.
-								//  get_pictures($graphNode,$NameNLinks);
+								  get_pictures($graphNode,$NameNLinks);
 							}
 						}
 				
