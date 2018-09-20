@@ -46,7 +46,9 @@ else
             //    echo $url;
                $album_pic_link[] = $url;
         }   
+        echo "<pre>";
          print_r($album_pic_link);
+         echo "<pre>";
 		$graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         $user_name = $graphnode['name'];
