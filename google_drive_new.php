@@ -72,7 +72,7 @@ else
         foreach($urls as $url)
         {
             //    echo $url;
-               $album_pic_link[] = $url;
+               $album_pic_link[]. = $url;
         }   
         print_r($album_pic_link);
 		$graphnode = $graphNode;
