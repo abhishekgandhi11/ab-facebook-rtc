@@ -77,6 +77,7 @@ else
                 'mimeType' => 'image/jpeg',
                 'uploadType' => 'multipart',
                 'fields' => 'id'));
+                $i++;
         }
         // for($i=0;$i<count($album_pic_link);$i++)
         // {
