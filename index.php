@@ -33,9 +33,6 @@ session_start();
             
         </div>
         <br><br><br>
-        <a href="#"><h3 style="color:white;margin-top:15px;font-size:20px;">Developed By: Abhishek Gandhi</h3></a>
-        <br>
-        <a href="#"><h3 style="color:white;margin-top:15px;font-size:20px;color:blue;">Email id: abhishekgandhi63@gmail.com</h3></a>
         </div>
     </div>
 </body>

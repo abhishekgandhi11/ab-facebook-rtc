@@ -35,7 +35,7 @@ else
 	$albumname=$_SESSION['Selected_albums'];
     
     #move to google drive
-    function moveToDrive($album_id,$folderId,$drive,&$album_pic_link) {
+    function moveToDrive($album_id,$folderId,$drive,$album_pic_link) {
         $img=$album_pic_link;
         print_r($img);       
         $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
@@ -68,12 +68,13 @@ else
     #get links from albums
     function get_pictures($graphNode,$NameNLinks) {
         //print_r($NameNLinks[1]);
-        //$album_pic_link = array();
+        $album_pic_link = array();
+        $album_pic_link=NULL;
         $urls = explode(' ', $NameNLinks[1]);
         foreach($urls as $url)
         {
             //    echo $url;
-               $album_pic_link[]. = $url;
+               $album_pic_link[] = $url;
         }   
         // print_r($album_pic_link);
 		$graphnode = $graphNode;
