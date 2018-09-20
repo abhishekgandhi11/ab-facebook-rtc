@@ -62,23 +62,38 @@ else
         
         $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
         $album_folder = $file->id;
-        echo count($album_pic_link);
-        for($i=0;$i<count($album_pic_link);$i++)
-        {
+        $i=0;
+        foreach($album_pic_link as $url1) {
             $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
-                    'name' => $i.'.jpg',
-                    'parents' => array($album_folder)
-                ));
-                $imgname=$album_pic_link[$i];
+                'name' => $i.'.jpg',
+                'parents' => array($album_folder)
+            ));
+            $imgname=$url1;
+        
+            $content = file_get_contents($imgname);
+        
+            $file = $drive->files->create($fileMetadata2, array(
+                'data' => $content,
+                'mimeType' => 'image/jpeg',
+                'uploadType' => 'multipart',
+                'fields' => 'id'));
+        }
+        // for($i=0;$i<count($album_pic_link);$i++)
+        // {
+        //     $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
+        //             'name' => $i.'.jpg',
+        //             'parents' => array($album_folder)
+        //         ));
+        //         $imgname=$album_pic_link[$i];
             
-                $content = file_get_contents($imgname);
+        //         $content = file_get_contents($imgname);
             
-                $file = $drive->files->create($fileMetadata2, array(
-                    'data' => $content,
-                    'mimeType' => 'image/jpeg',
-                    'uploadType' => 'multipart',
-                    'fields' => 'id'));
-        }        
+        //         $file = $drive->files->create($fileMetadata2, array(
+        //             'data' => $content,
+        //             'mimeType' => 'image/jpeg',
+        //             'uploadType' => 'multipart',
+        //             'fields' => 'id'));
+        // }        
     }
     #get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
