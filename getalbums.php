@@ -370,7 +370,8 @@
 										echo "<br>";
 									echo "</div>";
 		    						echo "<br/>";
-        	                echo "</div>";
+							echo "</div>";
+							header('location:test.php');
 	    				    }
     				    ?> 
 			          </div>

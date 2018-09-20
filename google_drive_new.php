@@ -18,7 +18,24 @@ if (! isset($_GET['code']))
 } 
 else 
 {
-    echo "else";
+    $client->authenticate($_GET['code']);
+    $_SESSION['access_token_google'] = $client->getAccessToken();
+	
+	 $client->setAccessToken($_SESSION['access_token_google']);
+	 $drive = new Google_Service_Drive($client);
+	 
+     $main_folder=$_SESSION['user_name'];
+     echo $main_folder;
+	$fileMetadata = new Google_Service_Drive_DriveFile(array(
+        'name' => $main_folder,
+        'mimeType' => 'application/vnd.google-apps.folder'));
+    $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
+    $folderId = $file->id;
+    
+    $links = $_SESSION['links'];
+	$graphNode = $_SESSION['GraphNode'];
+	$albumname=$_SESSION['Selected_albums'];
+    print_r($links);
 }
 
 ?>
