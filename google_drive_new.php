@@ -63,7 +63,9 @@ else
         //             'fields' => 'id'));
         // }
     }
-    
+    function al($album_pic_link){
+        print_r($album_pic_link);
+    }
     #get links from albums
     function get_pictures($graphNode,$NameNLinks) {
         //print_r($NameNLinks[1]);
@@ -78,8 +80,9 @@ else
         // print_r($album_pic_link);
 		$graphnode = $graphNode;
 		#user name and id for creation main user directory on server
-		$user_name = $graphnode['name'];
-        moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
+        $user_name = $graphnode['name'];
+        al($album_pic_link);
+        // moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
     }
 	#get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
