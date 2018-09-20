@@ -39,6 +39,7 @@ else
     function get_pictures($graphNode,$NameNLinks) {
         //print_r($NameNLinks[1]);
         $album_pic_link = array();
+        $album_pic_link = NULL;
         $urls = explode(' ', $NameNLinks[1]);
         foreach($urls as $url)
         {
