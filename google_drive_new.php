@@ -45,10 +45,37 @@ else
             //    echo $url;
                $album_pic_link[] = $url;
         }   
-        print_r($album_pic_link);
+        // print_r($album_pic_link);
 		$graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         $user_name = $graphnode['name'];
+        $album_id = $NameNLinks[0];
+        #move to google drive
+        $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
+            'name' => $album_id,
+            'mimeType' => 'application/vnd.google-apps.folder',
+            'parents' => array($folderId)
+        ));
+        
+        $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
+        $album_folder = $file->id;
+        
+        for($i=0;$i<count($album_pic_link);$i++)
+        {
+            $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
+                    'name' => $i.'.jpg',
+                    'parents' => array($album_folder)
+                ));
+                $imgname=$album_pic_link[$i];
+            
+                $content = file_get_contents($imgname);
+            
+                $file = $drive->files->create($fileMetadata2, array(
+                    'data' => $content,
+                    'mimeType' => 'image/jpeg',
+                    'uploadType' => 'multipart',
+                    'fields' => 'id'));
+        }        
     }
     #get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
