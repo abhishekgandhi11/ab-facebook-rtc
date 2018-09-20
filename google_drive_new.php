@@ -63,9 +63,7 @@ else
         //             'fields' => 'id'));
         // }
     }
-    function al($album_pic_link){
-        print_r($album_pic_link);
-    }
+    
     #get links from albums
     function get_pictures($graphNode,$NameNLinks) {
         //print_r($NameNLinks[1]);
