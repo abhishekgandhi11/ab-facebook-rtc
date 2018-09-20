@@ -61,8 +61,6 @@ else
                     'uploadType' => 'multipart',
                     'fields' => 'id'));
         }
-        
-        
     }
     
     #get links from albums
@@ -76,11 +74,11 @@ else
             //    echo $url;
                $album_pic_link[] = $url;
         }   
-        // print_r($album_pic_link);
+        print_r($album_pic_link);
 		$graphnode = $graphNode;
 		#user name and id for creation main user directory on server
 		$user_name = $graphnode['name'];
-        moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
+        // moveToDrive($NameNLinks[0],$folderId,$drive,$album_pic_link);
     }
 	#get selected albums.
 	function get_album($graphNode,$selected_album,$links) {
@@ -101,7 +99,6 @@ else
 			}
 		
     }
-    $album_pic_link = array();
     get_album($graphNode,$albumname,$links);
     
 
