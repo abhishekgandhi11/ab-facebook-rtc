@@ -14,7 +14,7 @@ session_start();
 <body >
 <?php include("header.php"); ?>
     <div class="">
-    <div class="container" align="centers">
+    <div class="container" style="margin-top:50px;" align="centers">
          <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          <hr>
          <hr>
