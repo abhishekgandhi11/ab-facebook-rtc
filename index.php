@@ -13,8 +13,8 @@ session_start();
 </head>
 <body >
 <?php include("header.php"); ?>
-    <div class="loginback">
-    <div class="container">
+    <div class="">
+    <div class="container" align="centers">
          <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          <hr>
          <hr>
