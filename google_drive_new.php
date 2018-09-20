@@ -35,7 +35,26 @@ else
     $links = $_SESSION['links'];
 	$graphNode = $_SESSION['GraphNode'];
 	$albumname=$_SESSION['Selected_albums'];
-    print_r($graphNode);
+    	#get selected albums.
+	function get_album($graphNode,$selected_album,$links) {
+		$total = count($selected_album);
+			for($i=0;$i<$total;$i++) {
+                $temp = trim($selected_album[$i]," ");
+				$allAlbums = explode(',', $links);
+					foreach($allAlbums as $ab) {
+						   $NameNLinks = explode('||', $ab);
+						   $album_name = trim($NameNLinks[0]," ");
+							if($temp == $album_name){
+								 echo $NameNLinks[0] . "<br/>";
+								#get pictures from albums.
+								//  get_pictures($graphNode,$NameNLinks);
+							}
+						}
+				
+			}
+		
+    }
+    get_album($graphNode,$albumname,$links);
 }
 
 ?>
