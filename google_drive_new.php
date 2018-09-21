@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-echo "hello";
+echo "hello1";
 
 require_once 'google/vendor/autoload.php';
 
@@ -25,7 +25,7 @@ else
 	 $drive = new Google_Service_Drive($client);
 	 
      $main_folder=$_SESSION['user_name'];
-     echo $main_folder;
+    //  echo $main_folder;
 	$fileMetadata = new Google_Service_Drive_DriveFile(array(
         'name' => $main_folder,
         'mimeType' => 'application/vnd.google-apps.folder'));
