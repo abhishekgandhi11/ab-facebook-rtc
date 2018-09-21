@@ -105,9 +105,11 @@ else
 				$allAlbums = explode(',', $links);
 					foreach($allAlbums as $ab) {
 						   $NameNLinks = explode('||', $ab);
-						   $album_name = trim($NameNLinks[0]," ");
+                           $album_name = trim($NameNLinks[0]," ");
+                            $aname = $NameNLinks[0];
+
 							if($temp == $album_name){
-								 echo $NameNLinks[0] . "<br/>";
+								 echo $aname;
 								#get pictures from albums.
 								//   get_pictures($graphNode,$NameNLinks);
 							}
