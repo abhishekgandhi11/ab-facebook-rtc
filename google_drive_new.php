@@ -63,7 +63,7 @@ else
         $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
         $album_folder = $file->id;
         $i=0;
-        foreach($album_pic_link as $url1) {
+        foreach(array_slice($album_pic_link,1) as $url1) {
             $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
                 'name' => $i.'.jpg',
                 'parents' => array($album_folder)
