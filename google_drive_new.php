@@ -44,7 +44,12 @@ else
         foreach($urls as $url)
         {
             //    echo $url;
-               $album_pic_link[] = $url;
+            if($url==NULL) {
+                
+            }
+            else {
+                $album_pic_link[] = $url;
+            }
         }   
         // echo "<pre>";
         $split_data = array_slice($album_pic_link,1);
