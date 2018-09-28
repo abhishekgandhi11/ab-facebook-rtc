@@ -345,7 +345,8 @@
 										}
 									}
 									echo "<br/>";
-							  echo "<h2 class='textdesign'>$graphNode['name']'s facebook albums</h2> ";
+									$n = $graphNode['name'];
+							  echo "<h2 class='textdesign'>". $n . "'s facebook albums</h2> ";
 							  echo "<br/><br/>";
 							  echo "<div class='row' align='center'>";
 					  			echo "<br/><br/><br/>";
