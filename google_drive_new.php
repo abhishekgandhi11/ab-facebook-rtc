@@ -53,7 +53,7 @@ else
 		#user name and id for creation main user directory on server
         // $user_name = $graphnode['name'];
         // $album_id = $aname;
-        echo $aname;
+        // echo $aname;
         #move to google drive
         // $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
         //     'name' => $album_id,
