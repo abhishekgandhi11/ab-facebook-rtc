@@ -47,7 +47,8 @@ else
                $album_pic_link[] = $url;
         }   
         // echo "<pre>";
-         print_r(array_slice($album_pic_link,1));
+        $split_data = array_slice($album_pic_link,1);
+         print_r($split_data);
         //  echo "<pre>";
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
