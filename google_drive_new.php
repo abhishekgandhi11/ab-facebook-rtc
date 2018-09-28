@@ -59,11 +59,11 @@ else
         $album_id = $aname;
         echo $aname;
         #move to google drive
-        // $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
-        //     'name' => $album_id,
-        //     'mimeType' => 'application/vnd.google-apps.folder',
-        //     'parents' => array($folderId)
-        // ));
+        $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
+            'name' => $album_id,
+            'mimeType' => 'application/vnd.google-apps.folder',
+            'parents' => array($folderId)
+        ));
         
         // $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
         // $album_folder = $file->id;
