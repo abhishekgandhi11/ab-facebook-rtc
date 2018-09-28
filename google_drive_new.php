@@ -51,6 +51,7 @@ else
         }   
         // $split_data = array_slice($album_pic_link,1);
         $folderId = $_SESSION['folder_id']; 
+        echo $folderId;
         // print_r($split_data);
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
