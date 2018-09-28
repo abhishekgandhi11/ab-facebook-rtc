@@ -31,7 +31,7 @@ else
         'mimeType' => 'application/vnd.google-apps.folder'));
     $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
     $folderId = $file->id;
-    
+    echo $folderId;
     $links = $_SESSION['links'];
 	$graphNode = $_SESSION['GraphNode'];
     $albumname=$_SESSION['Selected_albums'];
@@ -48,8 +48,9 @@ else
                 $album_pic_link[] = $url;
             }
         }   
-        $split_data = array_slice($album_pic_link,1);
-         print_r($split_data);
+        // $split_data = array_slice($album_pic_link,1);
+        echo "<br/>" . $folderId; 
+        // print_r($split_data);
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         $user_name = $graphNode['name'];
