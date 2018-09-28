@@ -37,23 +37,23 @@ else
     $albumname=$_SESSION['Selected_albums'];
     #get links from albums
     function get_pictures($graphNode,$NameNLinks,$aname) {
-        print_r($NameNLinks[1]);
-        // $album_pic_link = array();
-        // $album_pic_link = NULL;
-        // $urls = explode(' ', $NameNLinks[1]);
-        // foreach($urls as $url)
-        // {
-        //     //    echo $url;
-        //        $album_pic_link[] = $url;
-        // }   
+        // print_r($NameNLinks[1]);
+        $album_pic_link = array();
+        $album_pic_link = NULL;
+        $urls = explode(' ', $NameNLinks[1]);
+        foreach($urls as $url)
+        {
+            //    echo $url;
+               $album_pic_link[] = $url;
+        }   
         // echo "<pre>";
-        //  print_r($album_pic_link);
+         print_r($album_pic_link);
         //  echo "<pre>";
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         // $user_name = $graphnode['name'];
         // $album_id = $aname;
-        echo $aname;
+        // echo $aname;
         #move to google drive
         // $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
         //     'name' => $album_id,
