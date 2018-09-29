@@ -120,13 +120,12 @@ else
 					foreach($allAlbums as $ab) {
 						   $NameNLinks = explode('||', $ab);
                            $album_name = trim($NameNLinks[0]," ");
-                            
-
 							if($temp == $album_name){
                                 //  echo $aname;
                                 $aname = $NameNLinks[0];
+                                echo $aname;
 								#get pictures from albums.
-								  get_pictures($graphNode,$NameNLinks,$aname);
+								 // get_pictures($graphNode,$NameNLinks,$aname);
 							}
 						}
 				
