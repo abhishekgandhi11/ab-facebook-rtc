@@ -53,7 +53,7 @@ function get_album($graphNode,$selected_album,$links) {
                         if($temp == $album_name){
                             //  echo $aname;
                             $aname = $NameNLinks[0];
-                            // echo $aname;
+                            //  echo $aname;
                             #get pictures from albums.
                              get_pictures($graphNode,$NameNLinks,$aname);
                         }
@@ -142,7 +142,9 @@ function get_pictures($graphNode,$NameNLinks,$aname) {
 
 
 function ab_test($album_ar,$aname){
+    print_r($album_ar);
     $album_id = $aname;
+    echo $album_id;
     $folder_Id = $_SESSION['folder_id']; 
     echo $folder_Id ."<br/>";
     $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
