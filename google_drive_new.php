@@ -37,6 +37,12 @@ else
 	$graphNode = $_SESSION['GraphNode'];
     $albumname=$_SESSION['Selected_albums'];
     #get links from albums
+    function ab_test($album_ar){
+        print_r($album_ar);
+        echo "<br/>";
+        echo "<br/>";
+        echo "<br/>";
+    }
     function get_pictures($graphNode,$NameNLinks,$aname) {
         // print_r($NameNLinks[1]);
         $album_pic_link = array();
@@ -49,6 +55,7 @@ else
                 $album_pic_link[] = $url;
             }
         }   
+        ab_test($album_pic_link);
         // $split_data = array_slice($album_pic_link,1);
         $folder_Id = $_SESSION['folder_id']; 
         echo $folder_Id ."<br/>";
@@ -56,35 +63,35 @@ else
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         // $user_name = $graphNode['name'];
-        $album_id = $aname;
-        echo $album_id ."<br/>";
+        // $album_id = $aname;
+        // echo $album_id ."<br/>";
         #move to google drive
-        $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
-            'name' => $album_id,
-            'mimeType' => 'application/vnd.google-apps.folder',
-            'parents' => array($folder_Id)
-        ));
+        // $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
+        //     'name' => $album_id,
+        //     'mimeType' => 'application/vnd.google-apps.folder',
+        //     'parents' => array($folder_Id)
+        // ));
         
-        $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
-        $album_folder = $file->id;
+        // $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
+        // $album_folder = $file->id;
     
-        echo $album_folder;
-        $i=0;
-        foreach(array_slice($album_pic_link,1) as $url1) {
-            $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
-                'name' => $i.'.jpg',
-                'parents' => array($album_folder)
-            ));
-            $imgname=$url1;
-            $content = file_get_contents($imgname);
-            $file = $drive->files->create($fileMetadata2, array(
-                'data' => $content,
-                'mimeType' => 'image/jpeg',
-                'uploadType' => 'multipart',
-                'fields' => 'id'));
-                $i++;
-        }
-        echo $i;
+        // echo $album_folder;
+        // $i=0;
+        // foreach(array_slice($album_pic_link,1) as $url1) {
+        //     $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
+        //         'name' => $i.'.jpg',
+        //         'parents' => array($album_folder)
+        //     ));
+        //     $imgname=$url1;
+        //     $content = file_get_contents($imgname);
+        //     $file = $drive->files->create($fileMetadata2, array(
+        //         'data' => $content,
+        //         'mimeType' => 'image/jpeg',
+        //         'uploadType' => 'multipart',
+        //         'fields' => 'id'));
+        //         $i++;
+        // }
+        // echo $i;
 
 
 
