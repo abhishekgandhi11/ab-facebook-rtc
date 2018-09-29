@@ -50,14 +50,15 @@ else
             }
         }   
         // $split_data = array_slice($album_pic_link,1);
-        $folderId = $_SESSION['folder_id']; 
-        echo $folderId ."<br/>";
+        
         // print_r($split_data);
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
         $user_name = $graphNode['name'];
         $album_id = $aname;
-        echo $aname;
+        echo $aname ."<br/>";
+        $folderId = $_SESSION['folder_id']; 
+        echo $folderId ."<br/>";
         #move to google drive
         $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
             'name' => $album_id,
@@ -123,9 +124,9 @@ else
 							if($temp == $album_name){
                                 //  echo $aname;
                                 $aname = $NameNLinks[0];
-                                echo $aname;
+                                // echo $aname;
 								#get pictures from albums.
-								 // get_pictures($graphNode,$NameNLinks,$aname);
+								 get_pictures($graphNode,$NameNLinks,$aname);
 							}
 						}
 				
