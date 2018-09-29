@@ -50,20 +50,20 @@ else
             }
         }   
         // $split_data = array_slice($album_pic_link,1);
-        
+        $folder_Id = $_SESSION['folder_id']; 
+        echo $folder_Id ."<br/>";
         // print_r($split_data);
 		// $graphnode = $graphNode;
 		#user name and id for creation main user directory on server
-        $user_name = $graphNode['name'];
+        // $user_name = $graphNode['name'];
         $album_id = $aname;
         echo $aname ."<br/>";
-        $folderId = $_SESSION['folder_id']; 
-        echo $folderId ."<br/>";
+
         #move to google drive
         $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
             'name' => $album_id,
             'mimeType' => 'application/vnd.google-apps.folder',
-            'parents' => array($folderId)
+            'parents' => array($folder_Id)
         ));
         
         // $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
