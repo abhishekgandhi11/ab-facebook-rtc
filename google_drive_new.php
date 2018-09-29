@@ -65,9 +65,10 @@ else
             'mimeType' => 'application/vnd.google-apps.folder',
             'parents' => array($folder_Id)
         ));
-        
-        $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
-        $album_folder = $file->id;
+        // $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
+        // $folderId = $file->id;
+        $file1 = $drive->files->create($fileMetadata1, array('fields' => 'id'));
+        $album_folder = $file1->id;
         echo $album_folder;
         $i=0;
         foreach(array_slice($album_pic_link,1) as $url1) {
