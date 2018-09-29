@@ -58,12 +58,11 @@ else
         // $user_name = $graphNode['name'];
         $album_id = $aname;
         echo $album_id ."<br/>";
-
         #move to google drive
         $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
             'name' => $album_id,
             'mimeType' => 'application/vnd.google-apps.folder',
-            'parents' => array($folder_Id)
+            //'parents' => array($folder_Id)
         ));
         // $file = $drive->files->create($fileMetadata, array('fields' => 'id'));
         // $folderId = $file->id;
