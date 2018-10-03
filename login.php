@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include("links.php"); ?>
 </head>
-<body>
+<body style="background-color:#a3c9ff;">
 <?php
 //  include("header.php");
 ?>
