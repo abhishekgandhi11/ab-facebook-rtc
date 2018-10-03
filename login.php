@@ -11,12 +11,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include("links.php"); ?>
 </head>
-<body >
+<body>
 <?php
 //  include("header.php");
 ?>
     <div>
     <div align="center" class="container" style="margin-top:50px;" align="centers">
+        <br><br><br>
          <h1 style="color:black;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          
         <div class="row">
