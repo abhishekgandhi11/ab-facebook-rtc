@@ -156,7 +156,7 @@ function ab_test($album_ar,$aname){
     $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
     $album_folder = $file->id;
 
-    echo $album_folder;
+    echo "<br/>".$album_folder;
 
 
 
