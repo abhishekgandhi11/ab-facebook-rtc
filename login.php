@@ -14,11 +14,10 @@ session_start();
 <body >
 <?php
  include("header.php");
-header('location:login.php');
 ?>
     <div>
-    <div class="container" style="margin-top:50px;" align="centers">
-         <h1 align="center" style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
+    <div align="center" class="container" style="margin-top:50px;" align="centers">
+         <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          <hr>
          <hr>
         <div class="row">
@@ -40,12 +39,11 @@ header('location:login.php');
                         // header('location:htmlspecialchars($loginUrl)')
                         echo "<a href='" . htmlspecialchars($loginUrl) . "'><h3 style='color: black;'>Log in with Facebook!</h3></a>";
                     ?>
-            </form>
+                </form>
             </div>
             <div class="col-md-4">
             </div>
             <br><br><br>
-            
         </div>
         <br><br><br>
         </div>
