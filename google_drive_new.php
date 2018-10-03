@@ -34,13 +34,13 @@ else
     
     
     
-    
-      $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
-        'name' => "abhi",
+    $album_id = "abhi";
+    $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
+        'name' => $album_id,
         'mimeType' => 'application/vnd.google-apps.folder',
-        'parents' => array($folder_Id)
+        'parents' => array($folderId)
     ));
-    
+	
     $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
     $album_folder = $file->id;
     echo $album_folder;
