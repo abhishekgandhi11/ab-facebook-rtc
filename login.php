@@ -14,7 +14,7 @@ session_start();
 <body >
     <div class="loginback">
     <div class="container">
-         <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
+         <h1 align="center" style="color:black;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
         <div class="row">
             <div class="col-md-4">
             </div>

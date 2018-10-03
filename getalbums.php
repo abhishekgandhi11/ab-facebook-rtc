@@ -79,6 +79,7 @@
 						   $NameNLinks = explode('||', $ab);
 						   $album_name = trim($NameNLinks[0]," ");
 							if($temp == $album_name){
+		//						echo $temp . "<br/>";
 								#get pictures from albums.
 								get_pictures($graphNode,$NameNLinks);
 							}
@@ -167,6 +168,7 @@
                                             echo "<Button type='submit' name='logout' style='margin-right:10px;margin-top:10px;birder:1px;border-radius:5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);' class='btn-success'>Logout</Button>";
                                         echo "</div>";
                                     echo "</div>";
+                                    // echo "</div>";
                                        if(isset($_POST['logout'])){
                                             session_destroy();
                                          header('Location:login.php');
@@ -256,7 +258,9 @@
 											echo "<br/><br/><br/>";			
 											 get_album($graphNode,$selected_album,$links);
 											$zipfile = $zipfile.".zip";
-											echo "<a style='margin-top:10;text-align:center;' href='$user_name' download>".$user_name."</a>";
+											$_SESSION['user_name'] = $graphNode['name'];
+											header('location: auto_download_zipfile.php');
+											//echo "<a style='margin-top:10;text-align:center;' href='$user_name' download>".$user_name."</a>";
 										}
 										else {
 											echo "<br/>";
@@ -320,12 +324,17 @@
 												}	
 												$GLOBALS['links'].=" , ";
 											}												 
-											$zipfile = get_album($graphNode,$selected_album,$links);
+											$_SESSION['links'] = $GLOBALS['links'];
+											$_SESSION['GraphNode'] = $graphNode;
+											// $zipfile = get_album($graphNode,$selected_album,$links);
 
 										
-					                        $_SESSION['session_zipname'] = $user_name;
-											header('location: googledrivemsg.php');
-											
+					                        // $_SESSION['session_zipname'] = $user_name;
+											// header('location: googledrivemsg.php');
+											$_SESSION['user_name'] = $graphNode['name'];
+											$_SESSION['Selected_albums'] = $selected_album;
+											header('location:google_drive_new.php');
+
 										
 										}
 										else {
@@ -336,7 +345,8 @@
 										}
 									}
 									echo "<br/>";
-							  echo "<h2 class='textdesign'>facebook albums</h2> ";
+									$n = $graphNode['name'];
+							  echo "<h3 align='center'>". $n . "'s facebook albums</h3> ";
 							  echo "<br/><br/>";
 							  echo "<div class='row' align='center'>";
 					  			echo "<br/><br/><br/>";
@@ -370,8 +380,7 @@
 										echo "<br>";
 									echo "</div>";
 		    						echo "<br/>";
-							echo "</div>";
-							header('location:test.php');
+        	                echo "</div>";
 	    				    }
     				    ?> 
 			          </div>
