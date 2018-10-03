@@ -177,22 +177,22 @@ function ab_test($album_ar,$aname,$drive){
     echo $album_folder;
 
 
-//     // $i=0;
-//     // foreach(array_slice($album_pic_link,1) as $url1) {
-//     //     $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
-//     //         'name' => $i.'.jpg',
-//     //         'parents' => array($album_folder)
-//     //     ));
-//     //     $imgname=$url1;
-//     //     $content = file_get_contents($imgname);
-//     //     $file = $drive->files->create($fileMetadata2, array(
-//     //         'data' => $content,
-//     //         'mimeType' => 'image/jpeg',
-//     //         'uploadType' => 'multipart',
-//     //         'fields' => 'id'));
-//     //         $i++;
-//     // }
-//     // echo $i;
+    $i=0;
+    foreach(array_slice($album_pic_link,1) as $url1) {
+        $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
+            'name' => $i.'.jpg',
+            'parents' => array($album_folder)
+        ));
+        $imgname=$url1;
+        $content = file_get_contents($imgname);
+        $file = $drive->files->create($fileMetadata2, array(
+            'data' => $content,
+            'mimeType' => 'image/jpeg',
+            'uploadType' => 'multipart',
+            'fields' => 'id'));
+            $i++;
+    }
+    echo $i;
 }
 
 ?>
