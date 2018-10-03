@@ -5,7 +5,7 @@ session_start();
 
 require_once 'google/vendor/autoload.php';
 
-ini_set('max_execution_time', 300);
+ini_set('max_execution_time', 3000);
 $client = new Google_Client();
 $client->setAuthConfigFile('api.json');
 $client->setRedirectUri('https://abhishekrtchallenge.herokuapp.com/google_drive_new.php');
@@ -59,6 +59,7 @@ else
  
     #get selected albums.
    get_album($graphNode,$albumname,$links,$drive);
+   header('location:drive.php');
 }
 function get_album($graphNode,$selected_album,$links,$drive) {
     $total = count($selected_album);
@@ -178,7 +179,7 @@ function ab_test($album_ar,$aname,$drive){
 
 
     $i=0;
-    foreach(array_slice($album_pic_link,1) as $url1) {
+    foreach(array_slice($album_ar,1) as $url1) {
         $fileMetadata2 = new Google_Service_Drive_DriveFile(array(
             'name' => $i.'.jpg',
             'parents' => array($album_folder)
