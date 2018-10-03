@@ -13,13 +13,12 @@ session_start();
 </head>
 <body >
 <?php
- include("header.php");
+//  include("header.php");
 ?>
     <div>
     <div align="center" class="container" style="margin-top:50px;" align="centers">
-         <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
-         <hr>
-         <hr>
+         <h1 style="color:black;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
+         
         <div class="row">
             <div class="col-md-4">
             </div>
