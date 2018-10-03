@@ -147,16 +147,19 @@ function ab_test($album_ar,$aname){
     echo $album_id;
     $folder_Id = $_SESSION['folder_id']; 
     echo $folder_Id ."<br/>";
-    $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
-        'name' => $album_id,
-        'mimeType' => 'application/vnd.google-apps.folder',
-        'parents' => array($folder_Id)
-    ));
+    // $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
+    //     'name' => $album_id,
+    //     'mimeType' => 'application/vnd.google-apps.folder',
+    //     'parents' => array($folder_Id)
+    // ));
     
-    $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
-    $album_folder = $file->id;
+    // $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
+    // $album_folder = $file->id;
 
-    echo $album_folder;
+    // echo $album_folder;
+
+
+
     // $i=0;
     // foreach(array_slice($album_pic_link,1) as $url1) {
     //     $fileMetadata2 = new Google_Service_Drive_DriveFile(array(

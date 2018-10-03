@@ -16,7 +16,7 @@ session_start();
  include("header.php");
 header('location:login.php');
 ?>
-    <div class="">
+    <div>
     <div class="container" style="margin-top:50px;" align="centers">
          <h1 style="color:white;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
          <hr>
