@@ -18,7 +18,7 @@ session_start();
     <div>
     <div align="center" class="container" style="margin-top:50px;" align="centers">
         <br><br><br>
-         <h1 style="color:black;margin-top:10px;font-size:40px;">Facebook Album Manager</h1> 
+         <h1 style="color:black;margin-top:10px;font-size:50px;">Facebook Album Manager</h1> 
          
         <div class="row">
             <div class="col-md-4">
