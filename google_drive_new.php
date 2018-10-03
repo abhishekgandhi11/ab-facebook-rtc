@@ -169,7 +169,7 @@ function ab_test($album_ar,$aname,$drive){
     $fileMetadata1 = new Google_Service_Drive_DriveFile(array(
         'name' => $album_id,
         'mimeType' => 'application/vnd.google-apps.folder',
-        'parents' => array($folderId)
+        'parents' => array($folder_Id)
     ));
 	
     $file = $drive->files->create($fileMetadata1, array('fields' => 'id'));
