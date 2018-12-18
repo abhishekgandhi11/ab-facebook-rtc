@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	ob_start();
 	ini_set('max_excution_time',10000);
 	set_time_limit(10000);
  	error_reporting(0);
